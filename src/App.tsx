@@ -1,7 +1,9 @@
+import Title from "./components/Title";
+
 const App = () => {
   return (
     <div className="App">
-      App
+      <Title />
     </div>
   );
 }
