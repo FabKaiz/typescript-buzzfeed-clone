@@ -3,14 +3,14 @@ import QuestionBlock from './QuestionBlock'
 
 const QuestionsBlock = ({
   quizItem,
-  chosenAnsweritems,
-  setChosenAnsweritems,
+  chosenAnswerItems,
+  setChosenAnswerItems,
   unansweredQuestionIds,
   setUnansweredQuestionIds,
 }: {
   quizItem: Content
-  chosenAnsweritems: string[]
-  setChosenAnsweritems: Function
+  chosenAnswerItems: string[]
+  setChosenAnswerItems: Function
   unansweredQuestionIds: number[] | undefined
   setUnansweredQuestionIds: Function
 }) => {
@@ -25,8 +25,8 @@ const QuestionsBlock = ({
             question={question}
             quizItemId={quizItem.id}
             key={_index}
-            chosenAnsweritems={chosenAnsweritems}
-            setChosenAnsweritems={setChosenAnsweritems}
+            chosenAnswerItems={chosenAnswerItems}
+            setChosenAnswerItems={setChosenAnswerItems}
             unansweredQuestionIds={unansweredQuestionIds}
             setUnansweredQuestionIds={setUnansweredQuestionIds}
           />
