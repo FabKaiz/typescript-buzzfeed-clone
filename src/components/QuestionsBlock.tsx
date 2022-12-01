@@ -20,7 +20,7 @@ const QuestionsBlock = ({
         {quizItem.text}
       </h2>
       <div className="questions__container">
-        {quizItem.questions.map((question: Question, _index) => (
+        {quizItem.questions.map((question: Question, _index: number) => (
           <QuestionBlock
             question={question}
             quizItemId={quizItem.id}
