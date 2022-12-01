@@ -44,7 +44,7 @@ const App = () => {
       const highestElement = document.getElementById(String(highestId)) // TODO: useRef instead of getElementById
       highestElement?.scrollIntoView({ behavior: 'smooth' })
     }
-  }, [unansweredQuestionIds, chosenAnswerItems])
+  }, [unansweredQuestionIds, chosenAnswerItems, showAnswer])
 
   return (
     <div className="App">
