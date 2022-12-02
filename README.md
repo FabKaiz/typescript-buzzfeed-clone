@@ -1,6 +1,21 @@
-# Getting Started with Create React App
+# Buzzfeed Quiz clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```
+Fullstack app with React, Typescript, REST API and NodeJs
+```
+
+### [Result here](https://typescript-buzzfeed-clone-production-602d.up.railway.app/)
+
+### Frontend and Backend hosted on : [Railway](https://railway.app/)
+
+#### What i used :
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [NodeJs](https://nodejs.org/en/)
+- [axios](https://github.com/axios/axios)
+
+![website screenshot](./screenshot.jpg)
 
 ## Available Scripts
 
