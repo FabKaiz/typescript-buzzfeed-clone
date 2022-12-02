@@ -5,7 +5,7 @@ import { QuizData } from './interfaces'
 
 dotenv.config()
 
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 const app = express()
 
 app.get('/quiz-item', async (req: Request, res: Response) => {
@@ -24,7 +24,7 @@ app.get('/quiz-item', async (req: Request, res: Response) => {
       const quizItem: QuizData = await response.data.data[
         '514745f3-a7d5-4006-a814-cbea0fb99540'
       ]
-      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
+      res.setHeader('Access-Control-Allow-Origin', '*')
       res.send(quizItem)
     }
   } catch (error) {
