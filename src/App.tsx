@@ -14,7 +14,7 @@ const App = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:8000/quiz-item')
+      const response = await fetch(process.env.BACKEND_URL!)
       const json = await response.json()
       setQuiz(json)
     } catch (error) {
