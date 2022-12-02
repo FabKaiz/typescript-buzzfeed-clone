@@ -15,7 +15,7 @@ Fullstack app with React, Typescript, REST API and NodeJs
 - [NodeJs](https://nodejs.org/en/)
 - [axios](https://github.com/axios/axios)
 
-![website screenshot](./screenshot.jpg)
+![website screenshot](./screenshot.png)
 
 ## Available Scripts
 
