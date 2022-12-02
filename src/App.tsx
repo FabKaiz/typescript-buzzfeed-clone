@@ -16,7 +16,6 @@ const App = () => {
     try {
       const response = await fetch(process.env.REACT_APP_API_URL!)
       const json = await response.json()
-      console.log(process.env.REACT_APP_API_URL);
       setQuiz(json)
     } catch (error) {
       console.error(error)
