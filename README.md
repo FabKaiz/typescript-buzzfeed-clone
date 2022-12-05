@@ -14,6 +14,7 @@ Fullstack app with React, Typescript, REST API and NodeJs
 - [TypeScript](https://www.typescriptlang.org/)
 - [NodeJs](https://nodejs.org/en/)
 - [axios](https://github.com/axios/axios)
+- [react-content-loader](https://github.com/danilowoz/react-content-loader)
 
 ![website screenshot](./screenshot.png)
 
