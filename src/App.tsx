@@ -3,6 +3,7 @@ import Title from './components/Title'
 import { Content, QuizData } from '../interfaces'
 import QuestionsBlock from './components/QuestionsBlock'
 import AnswerBlock from './components/AnswerBlock'
+import CustomLoader from './components/CustomLoader'
 
 const App = () => {
   const [quiz, setQuiz] = useState<QuizData | null>()
@@ -11,12 +12,14 @@ const App = () => {
     number[] | undefined
   >([])
   const [showAnswer, setShowAnswer] = useState<Boolean>(false)
+  const [loading, setLoading] = useState(true)
 
   const fetchData = async () => {
     try {
       const response = await fetch(process.env.REACT_APP_API_URL!)
       const json = await response.json()
       setQuiz(json)
+      setLoading(false)
     } catch (error) {
       console.error(error)
     }
@@ -64,25 +67,35 @@ const App = () => {
 
   return (
     <div className="App">
-      <Title title={quiz?.title} subtitle={quiz?.subtitle} />
-      {refs &&
-        quiz?.content.map((content: Content) => (
-          <QuestionsBlock
-            key={content.id}
-            quizItem={content}
-            chosenAnswerItems={chosenAnswerItems}
-            setChosenAnswerItems={setChosenAnswerItems}
-            unansweredQuestionIds={unansweredQuestionIds}
-            setUnansweredQuestionIds={setUnansweredQuestionIds}
-            ref={refs[content.id]}
-          />
-        ))}
-      {answerRef && showAnswer && (
-        <AnswerBlock
-          answerOptions={quiz?.answers}
-          chosenAnswerItems={chosenAnswerItems}
-          ref={answerRef}
-        />
+      {loading ? (
+        quiz ? (
+          quiz?.content.map((question) => <CustomLoader key={question.id} />)
+        ) : (
+          <CustomLoader />
+        )
+      ) : (
+        <>
+          <Title title={quiz?.title} subtitle={quiz?.subtitle} />
+          {refs &&
+            quiz?.content.map((content: Content) => (
+              <QuestionsBlock
+                key={content.id}
+                quizItem={content}
+                chosenAnswerItems={chosenAnswerItems}
+                setChosenAnswerItems={setChosenAnswerItems}
+                unansweredQuestionIds={unansweredQuestionIds}
+                setUnansweredQuestionIds={setUnansweredQuestionIds}
+                ref={refs[content.id]}
+              />
+            ))}
+          {answerRef && showAnswer && (
+            <AnswerBlock
+              answerOptions={quiz?.answers}
+              chosenAnswerItems={chosenAnswerItems}
+              ref={answerRef}
+            />
+          )}
+        </>
       )}
     </div>
   )
