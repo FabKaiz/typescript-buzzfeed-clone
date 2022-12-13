@@ -4,7 +4,6 @@
 Fullstack app with React, Typescript, REST API and NodeJs
 ```
 
-### [Result here](https://typescript-buzzfeed-clone-production-602d.up.railway.app/)
 
 ### Frontend and Backend hosted on : [Railway](https://railway.app/)
 
